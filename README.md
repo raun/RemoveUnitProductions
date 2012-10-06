@@ -26,7 +26,7 @@ Now, In any case you have got the executible file with you.
 Using the utility
 ------------------------------------------------------------------------------------------------------------------------
 
-$ ./RemoveUnitProduction <input_filename> [<output_filename>]
+$ ./RemoveUnitProduction input-filename output-filename
 
 This will take the input from the specified input file. The output file is optional.
 If you specify the output file then, utility will direct the output to the file otherwise display the result on shell.
