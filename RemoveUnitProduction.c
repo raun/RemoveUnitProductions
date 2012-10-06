@@ -43,7 +43,6 @@ int main(int argc,char *argv[])
 	{
 		for(j=0;j<strlen(prod[i]);++j)
 		{
-//			printf("\nProcessing : %c",prod[i][j]);
 			if(prod[i][j]>='a'&&prod[i][j]<='z')
 			{
 				flag=0;
@@ -82,45 +81,42 @@ int main(int argc,char *argv[])
 	}
 	while(isUnitProductionLeft())
 	{
-	for(i=0;i<n;++i)
-	{
-		flag=0;
-		source=prod[i][0];
-		for(j=3;j<strlen(prod[i]);++j)
+		for(i=0;i<n;++i)
 		{
-			if(((prod[i][j-1]=='>')||(prod[i][j-1]=='|'))&&((prod[i][j]>='A')&&(prod[i][j]<='Z'))&&((prod[i][j+1]=='|')||(prod[i][j+1]=='\0')))
+			flag=0;
+			source=prod[i][0];
+			for(j=3;j<strlen(prod[i]);++j)
 			{
-				destin=prod[i][j];
-				flag=1;
-				break;
-			}
-		}
-		if(flag==1)
-		{
-			//printf("\nEliminating this production: %c = > %c\n",source,destin);
-			for(k=0;k<n;++k)
-			{
-				if(k!=i)
+				if(((prod[i][j-1]=='>')||(prod[i][j-1]=='|'))&&((prod[i][j]>='A')&&(prod[i][j]<='Z'))&&((prod[i][j+1]=='|')||(prod[i][j+1]=='\0')))
 				{
-					if(destin==prod[k][0])
+					destin=prod[i][j];
+					flag=1;
+					break;
+				}
+			}
+			if(flag==1)
+			{
+				for(k=0;k<n;++k)
+				{
+					if(k!=i)
 					{
-						for(l=3;l<strlen(prod[k]);++l)
+						if(destin==prod[k][0])
 						{
-							prod[i][j]=prod[k][l];
-							j++;
-							if(l!=strlen(prod[k])-1)
-							for(m=strlen(prod[i])+1;m>j;--m)
+							for(l=3;l<strlen(prod[k]);++l)
 							{
-								prod[i][m]=prod[i][m-1];
-								//print_production();
+								prod[i][j]=prod[k][l];
+								j++;
+								if(l!=strlen(prod[k])-1)
+									for(m=strlen(prod[i])+1;m>j;--m)
+									{
+										prod[i][m]=prod[i][m-1];
+									}
 							}
 						}
 					}
 				}
 			}
 		}
-	}
-	//print_production();
 	}
 	printf("\n");
 	if(argc==2)
