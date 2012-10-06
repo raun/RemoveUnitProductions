@@ -1,0 +1,4 @@
+S=>A|Bb
+A=>C|a
+B=>aBb|b
+C=>aSa
