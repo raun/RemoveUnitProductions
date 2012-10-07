@@ -3,7 +3,7 @@
 int main(int argc,char *argv[])
 {
 	FILE *f,*out;
-	char prod[10][50],ter[10],var[10],source,destin;
+	char prod[10][50],source,destin;
 	int i,j,k,n=0,flag,l,m;
 	f=fopen("gram.txt","r");
 	void print_production()
@@ -35,48 +35,6 @@ int main(int argc,char *argv[])
 		{
 			fscanf(f,"%s\n",prod[n]);
 			n++;
-		}
-	}
-	var[0]='\0';
-	ter[0]='\0';
-	for(i=0;i<n;++i)
-	{
-		for(j=0;j<strlen(prod[i]);++j)
-		{
-			if(prod[i][j]>='a'&&prod[i][j]<='z')
-			{
-				flag=0;
-				for(k=0;k<strlen(ter);++k)
-				{
-					if(prod[i][j]==ter[k])
-					{
-						flag=1;
-						break;
-					}
-				}
-				if(flag==0)
-				{
-					ter[strlen(ter)+1]='\0';
-					ter[strlen(ter)]=prod[i][j];
-				}
-			}
-			if(prod[i][j]>='A'&&prod[i][j]<='Z')
-			{
-				flag=0;
-				for(k=0;k<strlen(var);++k)
-				{
-					if(prod[i][j]==var[k])
-					{
-						flag=1;
-						break;
-					}
-				}
-				if(flag==0)
-				{
-					var[strlen(var)+1]='\0';
-					var[strlen(var)]=prod[i][j];
-				}
-			}
 		}
 	}
 	while(isUnitProductionLeft())
