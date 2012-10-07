@@ -5,7 +5,6 @@ int main(int argc,char *argv[])
 	FILE *f,*out;
 	char prod[10][50],source,destin;
 	int i,j,k,n=0,flag,l,m;
-	f=fopen("gram.txt","r");
 	void print_production()
 	{	
 		int i;
