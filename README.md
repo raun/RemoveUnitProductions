@@ -34,4 +34,4 @@ If you specify the output file then, utility will direct the output to the file 
 
 For any query/suggestion/bug contact:
 Anshul Sharma
-anshul.jmi@gmail.com
+anshul[DOT]jmi[AT]gmail[DOT]com
